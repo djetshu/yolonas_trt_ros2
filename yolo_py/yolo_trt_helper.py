@@ -36,11 +36,13 @@ class YoloTRTNode(Node):
         self.declare_parameter('model_name', 'yolo_nas_m.trt') # Default name of the model
         model_name = self.get_parameter('model_name').get_parameter_value().string_value
 
+        self.get_logger().info(f"MODEL NAME: {model_name}")
 
         # Initializing YOLO NAS with TensorRT
         base_directory = os.getcwd() # From workspace path
         subdirectory = "src/yolonas_trt_ros2/models"
         subdirectory_path = os.path.join(base_directory, subdirectory, model_name)
+        self.get_logger().info(f"MODEL PATH: {subdirectory_path}")
         self.yolo_nas = InferenceSession(subdirectory_path, (640, 640), trt_logger = trt.Logger(trt.Logger.VERBOSE)) 
 
         # Measure FPS variables
