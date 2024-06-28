@@ -3,7 +3,7 @@ from typing import Iterable, Tuple
 import cv2
 import numpy as np
 
-from yolo_py.dataset import COCO_DETECTION_CLASSES_LIST
+from yolo_py.dataset import COCO_DETECTION_CLASSES_LIST, CUSTOM_DATASET_CLASSES # Add your custom classes' names
 from yolo_py.mod_image import visualize_image
 from yolo_py.yolo_mem import allocate_buffers, load_engine
 
@@ -79,10 +79,10 @@ class InferenceSession:
 
         image = visualize_image(
             image_np=np.array(image),
-            class_names=COCO_DETECTION_CLASSES_LIST,
+            class_names=CUSTOM_DATASET_CLASSES,
             pred_boxes=predicted_boxes
         )
-        return image, predicted_boxes, COCO_DETECTION_CLASSES_LIST
+        return image, predicted_boxes, CUSTOM_DATASET_CLASSES
 
     @staticmethod
     def iterate_over_detection_predictions_in_batched_format(
