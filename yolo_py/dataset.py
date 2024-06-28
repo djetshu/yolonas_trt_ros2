@@ -80,3 +80,6 @@ COCO_DETECTION_CLASSES_LIST = [
     "hair drier",
     "toothbrush",
 ]
+
+CUSTOM_DATASET_CLASSES = [
+    "flower",]
