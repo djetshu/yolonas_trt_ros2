@@ -114,3 +114,10 @@ To launch the YOLO node:
 ```sh
 ros2 launch yolo_py yolo_trt.launch.py input_topic:=/your_custom_topic model_name:=your_custom_model.trt
 ```
+### Flower detection: Download TensorRT Model + ROSBAG
+- From this [link](https://1drv.ms/f/s!AsRwIEcpFAcigap3rsBEBVt1iJpW5g) you can download the bags and the yolonas trt model. 
+- Move the yolonas trt model to the following directory `ros2_ws/src/yolonas_trt_ros2/models/`
+- Lastly, modify the name of the classes to your custom classes' names in `ros2_ws/src/yolonas_trt_ros2/yolo_py/dataset.py`
+```sh
+ros2 launch yolo_py yolo_trt.launch.py input_topic:=/oak/rgb/image_raw model_name:=yolo_nas_m_flower.trt
+```
