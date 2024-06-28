@@ -1,0 +1,13 @@
+# Ignore ONNX files
+*.onnx
+# Ignore TensorRT files
+*.trt
+# Ignore image files
+*.jpg
+*.png
+# Ignore all files inside /checkpoints/ and /dataset/
+/models/*
+# Do not ignore README.md in /checkpoints/ and /dataset/
+!/models/README.md
+
+/yolo_py/__pycache__
