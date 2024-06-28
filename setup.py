@@ -21,7 +21,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='jetshu',
-    maintainer_email='jetshu@todo.todo',
+    maintainer_email='daffer.queque@outlook.com',
     description='TODO: Package description',
     license='Apache-2.0',
     tests_require=['pytest'],
